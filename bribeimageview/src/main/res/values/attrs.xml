@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BribeImageView">
+        <attr name="circle_radius" format="dimension"/>
+        <attr name="blur_radius" format="integer"/>
+        <attr name="period" format="integer"/>
+        <attr name="scale_factor" format="float"/>
+
+    </declare-styleable>
+</resources>

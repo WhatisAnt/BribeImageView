@@ -124,13 +124,13 @@ public class BribeImageView extends ImageView {
                 mListener.blurCompleted();
                 toPerformListener = false;
             }
-            canvas.drawBitmap(mBackgroundBitmap, 0, 0, null);
             if (toDrawCircle) {
                 mCanvas.drawBitmap(mBlurryBitmap, 0, 0, null);
                 mCanvas.drawCircle(mCircleCenterX, mCircleCenterY, mCircleRadius, mCirclePaint);
             } else {
                 mCanvas.drawBitmap(mBlurryBitmap, 0, 0, null);
             }
+            canvas.drawBitmap(mBackgroundBitmap, 0, 0, null);
             canvas.drawBitmap(mTargetBitmap, 0, 0, null);
         } else {
             canvas.drawBitmap(mBackgroundBitmap, 0, 0, null);

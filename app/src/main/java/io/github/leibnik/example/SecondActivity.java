@@ -30,7 +30,7 @@ public class SecondActivity extends AppCompatActivity {
 
         imageView.setOnBlurCompletedListener(new BribeImageView.OnBlurCompletedListener() {
             @Override
-            public void blueCompleted() {
+            public void blurCompleted() {
                 progressBar.setVisibility(View.GONE);
                 suck.setVisibility(View.VISIBLE);
             }

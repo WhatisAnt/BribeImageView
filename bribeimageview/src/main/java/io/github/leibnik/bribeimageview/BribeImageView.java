@@ -84,7 +84,7 @@ public class BribeImageView extends ImageView {
     }
 
     public interface OnBlurCompletedListener {
-        void blueCompleted();
+        void blurCompleted();
     }
 
     public void setOnBlurCompletedListener(OnBlurCompletedListener listener) {
@@ -121,7 +121,7 @@ public class BribeImageView extends ImageView {
         }
         if (toBlur) {
             if (mListener != null && toPerformListener) {
-                mListener.blueCompleted();
+                mListener.blurCompleted();
                 toPerformListener = false;
             }
             canvas.drawBitmap(mBackgroundBitmap, 0, 0, null);

@@ -2,7 +2,7 @@
 仿2016年春节微信朋友圈红包照片效果
 #效果图
 ![](http://ww4.sinaimg.cn/bmiddle/b5405c76gw1f3g5h9a10kj20dc0m83zm.jpg)
-![](http://ww2.sinaimg.cn/mw690/b5405c76gw1f3g5kolgnlg20bl0gzwmz.gif)
+![](http://ww4.sinaimg.cn/bmiddle/b5405c76gw1f3m6bd6j7dg20bd0gqdkl.jpg)
 #用法
 ##xml
 ```xml

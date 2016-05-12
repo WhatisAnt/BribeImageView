@@ -3,10 +3,12 @@ package io.github.leibnik.bribeimageview;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
+import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -27,9 +29,11 @@ public class BribeImageView extends ImageView {
     private final int DEFAULT_COLOR_DRAWABLE_DIMENSION = dp2px(250);
     private static final int BLUR_IMAGE = 0;
     private static final int TO_DRAW_CIRCLE = 1;
+
     private Bitmap mBackgroundBitmap;
     private Bitmap mBlurryBitmap;
     private Bitmap mTargetBitmap;
+
     private Canvas mCanvas;
     private Paint mCirclePaint;
     private int mCircleCenterX;
@@ -109,9 +113,7 @@ public class BribeImageView extends ImageView {
         ta.recycle();
         initHandler();
         mCirclePaint = new Paint();
-        mCirclePaint.setAlpha(0);
         mCirclePaint.setAntiAlias(true);
-        mCirclePaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
     }
 
     @Override
@@ -130,7 +132,6 @@ public class BribeImageView extends ImageView {
             } else {
                 mCanvas.drawBitmap(mBlurryBitmap, 0, 0, null);
             }
-            canvas.drawBitmap(mBackgroundBitmap, 0, 0, null);
             canvas.drawBitmap(mTargetBitmap, 0, 0, null);
         } else {
             canvas.drawBitmap(mBackgroundBitmap, 0, 0, null);
@@ -144,6 +145,7 @@ public class BribeImageView extends ImageView {
             return;
         }
         mBackgroundBitmap = getBitmapFromDrawable(getDrawable());
+        mCirclePaint.setShader(new BitmapShader(mBackgroundBitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
         blurImage();
     }
 
@@ -155,6 +157,7 @@ public class BribeImageView extends ImageView {
             return;
         }
         mBackgroundBitmap = getBitmapFromDrawable(getDrawable());
+        mCirclePaint.setShader(new BitmapShader(mBackgroundBitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
         blurImage();
 
     }
@@ -166,6 +169,7 @@ public class BribeImageView extends ImageView {
             return;
         }
         mBackgroundBitmap = getBitmapFromDrawable(getDrawable());
+        mCirclePaint.setShader(new BitmapShader(mBackgroundBitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
         blurImage();
 
     }
@@ -177,6 +181,7 @@ public class BribeImageView extends ImageView {
             return;
         }
         mBackgroundBitmap = bm;
+        mCirclePaint.setShader(new BitmapShader(mBackgroundBitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
         blurImage();
 
     }
@@ -188,6 +193,7 @@ public class BribeImageView extends ImageView {
             return;
         }
         mBackgroundBitmap = getBitmapFromDrawable(getDrawable());
+        mCirclePaint.setShader(new BitmapShader(mBackgroundBitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
         blurImage();
     }
 
